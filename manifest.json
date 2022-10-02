@@ -1,0 +1,37 @@
+{
+  "manifest_version": 2,
+  "name": "vmall助手",
+  "version": "1.0.0",
+  "description": "华为商城助手,帮你抢抢抢",
+  "content_security_policy": "script-src 'self'; object-src 'self';",
+  "permissions": [],
+  "icons": {
+    "16": "icons/icon-16.png",
+    "48": "icons/icon-48.png",
+    "128": "icons/icon-128.png"
+  },
+  "background": {
+    "scripts": [
+      "js/background.js"
+    ],
+    "persistent": true
+  },
+  "content_scripts": [
+    {
+      "matches": [
+        "https://www.vmall.com/product/*"
+      ],
+      "js": [
+        "js/jquery.min.js",
+        "js/content.js"
+      ]
+    }
+  ],
+  "browser_action": {
+    "default_icon": {
+      "16": "icons/icon-16.png",
+      "48": "icons/icon-48.png",
+      "128": "icons/icon-128.png"
+    }
+  }
+}
